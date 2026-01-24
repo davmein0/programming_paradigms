@@ -1,0 +1,1 @@
+There is a line separating 'return' and '2n + 1'. Javascript automatically inserted a semicolon after 'return', before calculating the '2n + 1', so it did not return a value. 
