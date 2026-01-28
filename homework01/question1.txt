@@ -1,0 +1,15 @@
+Q1.1 Identify the scopes for all variables in the program
+a: global
+b: function
+c (let): block
+c (var): global
+d: block
+
+Q1.2 Execute the code and explain why does the code below prints what is shown on the right?
+1. console.log(a + b + c) -> 6: a, b, and c have been defined as 1, 2, and 3 respectively. The console.log statement occurs in a block scope where all those variables exist. 
+    There does exist a global variable 'c' with the value of 20, but we created a separate variable with the same name in the block scope. The console.log looks inside the block scope because it is the 'closer' scope, and references the c whose value is 3. 
+    The block variable shadows the global variable, and takes precedence over it in the block scope.
+2. console.log(a + b) -> 3: a and b have been defined as 1 and 2. The console.log was called in myFunction, and both the global variable 'a' and function scope variable 'b' can access that scope. 1 + 2 = 3.
+3. console.log(a) -> 1: 'a' is a global variable, so it exists outside the myFunction scope, where the console.log was called. Its value is 1. 
+4. console.log(c) -> 20: 'c' was defined to be 20 in the global scope, so it prints 20. A separate variable 'c' was also defined in the block scope within myFunction, but it doesn't exist outside of that block, where the console.log was called, so it refers to the global variable 'c' instead. 
+5. console.log(d) -> ERROR: 'd' was defined in a block scope, and it doesn't exist outside of that scope, where it is being referenced, and referencing d outside its scope results in a ReferenceError. 

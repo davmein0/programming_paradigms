@@ -1,0 +1,13 @@
+JavaScript is a weakly dynamically typed programming language, so it tries its best to accomodate for comparing between 
+different types of data to see what's equal and what isn't.
+
+1. 0 == "0": JavaScript converts the string "0" to the number 0, so it's true.
+2. 0 == []: 
+-- Step 1: convert boolean to number. Neither are booleans, so pass. 
+-- Step 2: Convert object to primative: [] becomes ""
+-- Step 3: 0 == "": "" gets converted to a number, 0.
+-- Step 4: 0 == 0, so it's true
+
+3. "0" == []: [] becomes "". "" and "0" are different strings. 
+They both translate to the number 0, if need to, but they are not the same strings, so it's False.
+
