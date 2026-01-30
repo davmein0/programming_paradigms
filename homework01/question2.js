@@ -1,11 +1,14 @@
 function find(nums) {
-    /* your solution goes here */
+    /* Calculates the maximum number of consecutive 33s in a list of numbers */
     let max_count = 0;
     let count = 0;
     for (let i = 0; i < nums.length; i++) {
+        // If the number is exactly 33, increment count
         if (nums[i] === 33) {
             count++;
         }
+        // If not, update max_count, if current streak exceedes max_count 
+        // reset count
         else {
             max_count = max_count < count ? count : max_count;
             count = 0;
