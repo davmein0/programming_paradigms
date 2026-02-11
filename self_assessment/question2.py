@@ -14,7 +14,7 @@ def tokenize(expression: str) -> list:
     while index < len(expression):
         char = expression[index]
         # Handles negative numbers
-        if char == '-' and (index == 0 or tokens[-1] in "+-*/"):
+        if char == '-' and (index == 0 or expression[index-1] in "+-*/"):
             start_index = index
         # If an operator found, we reached the end of the operand
         elif char in "*-/+":
@@ -26,6 +26,7 @@ def tokenize(expression: str) -> list:
 
     # Append the last operand
     tokens.append(expression[start_index:index])
+    print(tokens)
     return tokens
 
 
@@ -98,8 +99,13 @@ def print_output(output: list) -> None:
 
 
 if __name__ == "__main__":
-    expression = "2*7+3"  # Test 1
-    expression2 = "-8/-2.2*-10.2"
-    output = text_to_tree(expression2)
-    print(text_to_tree("-8/-2.2*-10.2"))
-    print_output(output)
+    # expression = "2*7+3"  # Test 1
+    # expression2 = "-8/-2.2*-10.2"
+    # output = text_to_tree(expression2)
+    # print(text_to_tree("-8/-2.2*-10.2"))
+    # print_output(output)
+    # assert text_to_tree("-62.12*146.8-183/106.03") == ['"-" -> "*" // left', '"-" -> "/" // right', '"*" -> "-62.12" // left', '"*" -> "146.8" // right', '"/" -> "183" // left', '"/" -> "106.03" // right'], "Test 1 failed"
+    print_output(text_to_tree("-74.4/57-165*176+67/138.7+198-5.0-140.0*46.3"))
+    print("Expected:")
+    print_output(['"-" -> "-" // left', '"-" -> "*" // right', '"-" -> "+" // left', '"-" -> "5.0" // right', '"*" -> "140.0" // left', '"*" -> "46.3" // right', '"+" -> "+" // left', '"+" -> "198" // right', '"+" -> "-" // left', '"+" -> "/" // right', '"-" -> "/" // left', '"-" -> "*" // right', '"/" -> "67" // left', '"/" -> "138.7" // right', '"/" -> "-74.4" // left', '"/" -> "57" // right', '"*" -> "165" // left', '"*" -> "176" // right'])
+    #assert text_to_tree("-74.4/57-165*176+67/138.7+198-5.0-140.0*46.3") == ['"-" -> "-" // left', '"-" -> "*" // right', '"-" -> "+" // left', '"-" -> "5.0" // right', '"*" -> "140.0" // left', '"*" -> "46.3" // right', '"+" -> "+" // left', '"+" -> "198" // right', '"+" -> "-" // left', '"+" -> "/" // right', '"-" -> "/" // left', '"-" -> "*" // right', '"/" -> "67" // left', '"/" -> "138.7" // right', '"/" -> "-74.4" // left', '"/" -> "57" // right', '"*" -> "165" // left', '"*" -> "176" // right'], "Test 2 failed"
