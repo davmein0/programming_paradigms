@@ -1,0 +1,10 @@
+Output: 
+0
+1
+2
+
+The difference between the first code snippet and this one is that for this one, 'i' is declared using 'let' instead of 'var'.
+Since 'var' is function scoped, the same single 'i' is used for all iterations, so each instance of the arrow function refers to the same 'i' in the first snippet.
+However, 'let' is block scoped, so a different variable 'i' is created during each cycle of the for loop.
+Therefore, each arrow function receives a different 'i' free variable, each one with a different value (0, 1, 2),
+Which don't change as the for loop gets processed. 

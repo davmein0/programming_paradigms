@@ -1,0 +1,11 @@
+Output: 
+3
+3
+3
+
+The for loop iterates over setTimeout(() => console.log(i), 100), from i = 0 to i = 2. 
+setTimeout creates and runs the arrow function to print the value of i after 100 ms. 
+JS does deep binding, so the value of the free variable, i, passed to the arrow function is the value of i when the function is created.
+The function is created after the 100 ms delay, and by that time, i has been incremented to the upper bound, 3. 
+So for each iteration of the loop, the value of 'i' that gets passed to the arrow function is 3, so 3 gets printed to the console every single time.
+Also, since 'var' is used to create i, the same 'i' is used for each console.log(). Var isn't block-scoped, so a new variable 'i' wasn't created for each iteration of the for loop.
