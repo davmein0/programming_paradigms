@@ -236,7 +236,7 @@ function dfs(startNode, adjacencyList) {
 }
 
 let defects = loadObjects().slice(1); // skip the header row
-console.log(defects[0]);
+// console.log(defects[0]);
 console.log(
   "Query 1 result (How many defects have been solved by developers):",
   query1(defects),
