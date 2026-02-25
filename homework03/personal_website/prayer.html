@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prayer Requests</title>
+    
+    <link rel="stylesheet" href="p_website.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+    <div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown" >
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="prayer.html">Prayer Request</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="main_container">
+            <div class="row">
+                <div class="col-6">
+            <div class="container-fluid">
+                <h1>Prayer Requests</h1>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Title</label>
+                    <textarea class="form-control" id="title" rows="1"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Prayer</label>
+                    <textarea class="form-control" id="message" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Dedicated to:</label>
+                    <textarea class="form-control" id="dedicated" rows="1"></textarea>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="addPrayer()">Send Prayer Request</button>
+            </div>
+            </div>
+            <div class="col-6">
+            <div id="prayer-requests" class="container-fluid">
+                <h1>Daily Prayer</h1>
+                <div id="dailyPrayer">
+                    <textarea class="form-control" id="dailyPrayerText" rows="3" readonly></textarea>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="prayer.js"></script>
+</body>
+</html>

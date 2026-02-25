@@ -1,9 +1,11 @@
 let fibonacci = function () {
   let current = 1;
   let prev = 0;
-  let count = 0;
+  let count = 0; // Number of times the generator has been called.
 
   return () => {
+    // First time, return 0; second time, return 1;
+    // After that, return the sum of the previous two (prev and current)
     if (count === 0) {
       count++;
       return prev;
@@ -11,13 +13,14 @@ let fibonacci = function () {
       count++;
       return current;
     } else if (count > 1) {
+      // Update prev and current for the next call
       let temp = prev + current;
       prev = current;
       current = temp;
       count++;
       return current;
     } else {
-      return -1;
+      return -1; // Invalid input (error case)
     }
   };
 };
