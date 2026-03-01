@@ -1,0 +1,25 @@
+.navbar_text {
+  font-size: 20px;
+}
+
+.main_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 40px;
+  margin: auto;
+}
+
+p {
+  font-size: 18px;
+  font-weight: bold;
+  color: lightskyblue;
+  text-align: center;
+}
+
+#dedicated {
+  font-weight: bold;
+  color: rgb(129, 231, 143);
+}
