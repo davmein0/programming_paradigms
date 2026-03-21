@@ -1,0 +1,3 @@
+What is the most appropriate class type to implement the feature below?
+Feature 1: view a specific question posted on EdStem: DetailView
+Feature 2: list all questions made on EdStem: ListView
