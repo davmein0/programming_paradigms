@@ -1,0 +1,4 @@
+What are templates in Django?
+Django templates are text files, like HTML, that are used to create dynamic web pages.
+It can use Django Built-in Language (DTL), which allows Django to implement logic, like 'if' and 'for' loops, and use data and variables passed in from views.
+Templates can inherit from other templates, which allows a lot of html web pages to use consistent structures or themes, and it helps reduce redundant code.
