@@ -2,17 +2,40 @@
 
 {% block title %}Blog Posts{% endblock %}
 {% block content %}
+<!-- Display a list of blog posts, 5 per page -->
 <div>
     <h1>List of all blog posts</h1>
     {% if latest_posts %}
         <ul>
             {% for post in latest_posts %}
-                <li>{{ post.title }} by {{post.author_name}} ({{ post.pub_date }})</li>
+                <li>
+                    <a href="/blog/{{ post.id }}">
+                        {{ post.title }} by <em>{{post.author_name}}</em> ({{ post.pub_date }})
+                    </a>
+                </li>
             {% endfor %}
         </ul>
     {% else %}
         <p>No blog posts at this point, feel free to add one!</p>
     {% endif %}
-    
+
+    <!-- Pagination controls -->
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
 </div>
 {% endblock %}

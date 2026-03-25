@@ -19,6 +19,8 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
+    # Include blog app URLs. More routing info in blog/urls.py
     path("blog/", include("blog.urls")),
+    # Admin site URLs.
     path("admin/", admin.site.urls),
 ]
