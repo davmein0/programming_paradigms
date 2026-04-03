@@ -1,0 +1,19 @@
+<!-- Display a post's title, author, publication date, and contents-->
+{% extends "blog/base.html" %}
+
+{% block title %}Post Details{% endblock %}
+{% block content %}
+{% if post %}
+    <h2>{{ post.title }}</h2>
+    <p>
+        <b>Author:</b> <em>{{ post.author_name }}</em>
+    </p>
+    <p>
+        <b>Published:</b> ({{ post.pub_date }})
+    </p>
+    <p>{{ post.content }}</p>
+{% else %}
+    <h2>No post found.</h2>
+{% endif %}
+{% endblock %}
+    
