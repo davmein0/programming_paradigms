@@ -1,0 +1,5 @@
+Statement C is true: C. SavingsAccount can call addFunds because it’s a subclass in the same package
+addFunds is a protected method, and protected methods/attributes are visible within the same package, as well as subclasses outside of the package.
+This means it can be accessed by SavingsAccount, because it is in the same package (Bank).
+
+A doesn't work because balance is protected, and BankApp is in a different package (and isn't a subclass). similar logic for why B doesn't work (addFunds is also protected and in a different class), and D doesn't work because private members can't be accessed outside of class they're declared in.
